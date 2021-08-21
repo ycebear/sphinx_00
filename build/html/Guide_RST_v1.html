@@ -1,0 +1,351 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+    <title>How to generate documentations &#8212; sphiggy  documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/adctheme.css" />
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <meta name="generator" content="Sphinx/ADC Theme by Mirounga www.mirounga.fr"/>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="top" title="sphiggy  documentation" href="index.html" />
+    <link media="only screen and (max-device-width: 480px)" href="_static/css/mobile.css" type="text/css" rel="stylesheet" /> 
+  </head><body>
+<div id="docstitle">
+    <p>sphiggy  documentation</p>
+</div>
+<div id="header">
+    <div id="title"><h1>How to generate documentations</h1></div>
+    <ul id="headerButtons">
+        <li id="toc_button"><div class="headerButton"><a href="#">Table of Contents</a></div></li>
+        <li id="page_buttons">
+            <div class="headerButton"><a href="genindex.html" title="General Index" accesskey="I">index</a></div>
+        </li>
+    </ul>
+</div>
+
+<div id="sphinxsidebar">
+  <div class="sphinxsidebarwrapper">
+        <ul><li class="toctree-l1"><a href="index.html">Main Page</a></li></ul>
+        <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="Guide_RST.html">How to generate documentations</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Guide_RST.html#with-sphinx-and-github">With Sphinx and GitHub</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Guide_RST.html#jupiter-als-version-auf-github-bringen-und-versionen-zuruck-holen">Jupiter als Version auf GitHub bringen und Versionen zurück holen</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Guide_RST.html#pelican">Pelican</a></li>
+<li class="toctree-l1"><a class="reference internal" href="Guide_RST.html#jinja-python-template-engine">Jinja - python template engine</a></li>
+</ul>
+
+      <h3>This Page</h3>
+      <ul class="this-page-menu">
+        <li><a href="_sources/Guide_RST_v1.rst.txt"
+               rel="nofollow">Show Source</a></li>
+      </ul>
+    <div id="searchbox" style="display: none">
+        <form class="search" action="search.html" method="get">
+                        <div class="search-wrapper">
+                        <input type="submit" value="" class="search-left"/>
+                        <input class="prettysearch" type="text" name="q" size="18" title="Enter search terms or a module, class or function name."/>
+                        <span class="search-right">&nbsp;</span>
+                        </div>
+          <input type="hidden" name="check_keywords" value="yes" />
+          <input type="hidden" name="area" value="default" />
+        </form>
+    </div>
+    <script type="text/javascript">$('#searchbox').show(0);</script>
+  </div>
+</div>
+
+
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <section id="how-to-generate-documentations">
+<h1>How to generate documentations<a class="headerlink" href="#how-to-generate-documentations" title="Permalink to this headline">¶</a></h1>
+</section>
+<section id="with-sphinx-and-github">
+<h1>With Sphinx and GitHub<a class="headerlink" href="#with-sphinx-and-github" title="Permalink to this headline">¶</a></h1>
+<section id="good-to-know">
+<h2>good to know<a class="headerlink" href="#good-to-know" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Git is an open source base technology for data storing with version
+management</p></li>
+<li><p>GitHub and GitLab use Git as a core but offer some additional
+functionalities</p></li>
+<li><p>GitHub and GitLab have - beside using Git as core - nothing in
+common: they are different communities and/or have different owners</p></li>
+</ul>
+</section>
+<section id="prepare">
+<h2>prepare<a class="headerlink" href="#prepare" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>have Python installed,
+<a class="reference external" href="https://docs.conda.io/en/latest/miniconda.html">MINICONDA</a> e.g.</p>
+<ul>
+<li><p>install missing packeges with: ‘conda install newPackage’</p></li>
+<li><p>or when troubles have come up try: ‘conda install -c anaconda
+newPackage’</p></li>
+</ul>
+</li>
+<li><p>know how to start a CMD command line window from Anaconda or
+Miniconda</p>
+<ul>
+<li><p>click the windows sign at the bottom-left corner of your screen</p></li>
+<li><p>look for ‘Anaconda’ in the application list</p></li>
+<li><p>select ‘Anaconda prompt’</p></li>
+<li><p>here you can run installations of Python packages</p></li>
+<li><p>in order to work on your project: navigate with the ‘cd’-command
+to your project directory</p></li>
+</ul>
+</li>
+<li><p>know how to start Jupyter under Miniconda</p>
+<ul>
+<li><p>start a CMD command line window from Anaconda or Miniconda</p></li>
+<li><p>navigate with the ‘cd’-command to your project directory</p></li>
+<li><p>‘jupyter notebook’ (enter)</p></li>
+<li><p>switch to the newer Lab-version: in the URL delete ‘tree’ and
+write ‘lab’ instead</p></li>
+</ul>
+</li>
+<li><p>Download and install the latest version of Git:
+<a class="reference external" href="https://git-scm.com/downloads">https://git-scm.com/downloads</a></p></li>
+<li><p>have a GitHub account <a class="reference external" href="https://github.com/">https://github.com/</a></p></li>
+</ul>
+</section>
+<section id="do-the-following-setps">
+<h2>do the following setps<a class="headerlink" href="#do-the-following-setps" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>login at your GitHub account</p></li>
+<li><p>create a new repository</p></li>
+<li><p>creat a new (even empty) file in the repository</p></li>
+<li><p>clone the repository to your local desktop</p>
+<ul class="simple">
+<li><p>prepare a directory first on your local desktop</p></li>
+<li><p>start a CMD command line window from Anaconda or Miniconda</p></li>
+<li><p>navigate with ‘cd’-commands to the prepared directory</p></li>
+<li><p>on GitHub: –&gt; Code –&gt; Clone –&gt; copy the URL</p></li>
+<li><p>on desktop CDM: type ‘git clone’ and paste the URL behind (enter)</p></li>
+</ul>
+</li>
+<li><p>start a new sphinx project with: ‘sphinx-quickstart’</p></li>
+<li><p>modify the index.rst as you want (save it)</p></li>
+<li><p>‘make html’ (enter)</p></li>
+<li><p>go to –&gt; build –&gt; html –&gt; index.html (start it in your browser)</p></li>
+</ol>
+</section>
+<section id="choose-a-theme">
+<h2>choose a theme<a class="headerlink" href="#choose-a-theme" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic simple">
+<li><p>make a choice here: <a class="reference external" href="https://sphinx-themes.org/">https://sphinx-themes.org/</a></p></li>
+<li><p>click on the theme to see a sample website with this theme</p></li>
+<li><p>look how to call the theme:</p>
+<ul class="simple">
+<li><p>import sphinx_redactor_theme</p></li>
+<li><p>html_theme = ‘sphinx_redactor_theme’</p></li>
+<li><p>html_theme_path = [sphinx_redactor_theme.get_html_theme_path()]</p></li>
+</ul>
+</li>
+<li><p>install the theme with: pip install sphinx_redactor_theme</p></li>
+<li><p>open ‘source/conf.py’</p></li>
+<li><p>replace the theme setting to:</p>
+<ul class="simple">
+<li><p>import sphinx_redactor_theme</p></li>
+<li><p>html_theme = ‘sphinx_redactor_theme’</p></li>
+<li><p>html_theme_path = [sphinx_redactor_theme.get_html_theme_path()]</p></li>
+</ul>
+</li>
+<li><p>‘make html’ (enter)</p></li>
+<li><p>go to –&gt; build –&gt; html –&gt; index.html (start it in your browser)</p></li>
+</ol>
+</section>
+<section id="helpful-ressources">
+<h2>Helpful ressources<a class="headerlink" href="#helpful-ressources" title="Permalink to this headline">¶</a></h2>
+<p><strong>Sphinx Tutorial</strong> lean and useful</p>
+<ul class="simple">
+<li><p>1: setup: <a class="reference external" href="https://www.youtube.com/watch?v=WcUhGT4rs5o">https://www.youtube.com/watch?v=WcUhGT4rs5o</a></p></li>
+<li><p>2: themes: <a class="reference external" href="https://www.youtube.com/watch?v=RvJ54ADcVno">https://www.youtube.com/watch?v=RvJ54ADcVno</a></p></li>
+<li><p>3: to format with reSt: <a class="reference external" href="https://www.youtube.com/watch?v=DSIuLnoKLd8">https://www.youtube.com/watch?v=DSIuLnoKLd8</a></p></li>
+<li><p>4: Push docs to github: <a class="reference external" href="https://www.youtube.com/watch?v=DSIuLnoKLd8">https://www.youtube.com/watch?v=DSIuLnoKLd8</a></p></li>
+</ul>
+<p><strong>Sphinx Templates</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=Zb_Oy5UG6Tw">https://www.youtube.com/watch?v=Zb_Oy5UG6Tw</a></p></li>
+<li><p><a class="reference external" href="https://sphinx-themes.org/sample-sites/sphinx-theme-pd/">https://sphinx-themes.org/sample-sites/sphinx-theme-pd/</a></p></li>
+<li><p><a class="reference external" href="https://sphinx-themes.org/sample-sites/sphinx-pdj-theme/">https://sphinx-themes.org/sample-sites/sphinx-pdj-theme/</a></p></li>
+<li><p><a class="reference external" href="https://sphinx-themes.org/sample-sites/sphinx-adc-theme/">https://sphinx-themes.org/sample-sites/sphinx-adc-theme/</a></p></li>
+<li><p><a class="reference external" href="https://sphinx-themes.org/sample-sites/groundwork-sphinx-theme/">https://sphinx-themes.org/sample-sites/groundwork-sphinx-theme/</a></p></li>
+<li><p><a class="reference external" href="https://sphinx-themes.org/sample-sites/sphinx-sizzle-theme/">https://sphinx-themes.org/sample-sites/sphinx-sizzle-theme/</a></p></li>
+<li><p><strong>https://sphinx-themes.org/sample-sites/sphinx-redactor-theme/</strong></p></li>
+<li><p><a class="reference external" href="https://sphinx-themes.org/">https://sphinx-themes.org/</a></p></li>
+<li><p><a class="reference external" href="https://sphinxawesome.xyz/how-to/modify/">https://sphinxawesome.xyz/how-to/modify/</a> how to modify themes</p></li>
+</ul>
+<p><strong>Applied example with eplanations</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://geo-python-site.readthedocs.io/en/latest/lessons/L1/course-environment-components.html">https://geo-python-site.readthedocs.io/en/latest/lessons/L1/course-environment-components.html</a></p></li>
+<li><p><a class="reference external" href="https://geo-python-site.readthedocs.io/en/latest/index.html">https://geo-python-site.readthedocs.io/en/latest/index.html</a></p></li>
+</ul>
+<p><strong>GitHub, Jupyter</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://blog.reviewnb.com/github-jupyter-notebook/">https://blog.reviewnb.com/github-jupyter-notebook/</a></p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/48003022/jupyter-notebook-and-github">https://stackoverflow.com/questions/48003022/jupyter-notebook-and-github</a></p></li>
+<li><p><a class="reference external" href="https://thenewstack.io/integrate-jupyter-notebooks-with-github/">https://thenewstack.io/integrate-jupyter-notebooks-with-github/</a></p></li>
+</ul>
+<p><strong>Collection</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.bing.com/videos/search?q=using+sphinx+for+documentation&amp;&amp;view=detail&amp;mid=4E8351B155222C9821484E8351B155222C982148&amp;&amp;FORM=VRDGAR&amp;ru=%2Fvideos%2Fsearch%3Fq%3Dusing%2520sphinx%2520for%2520documentation%26qs%3DUT%26form%3DQBVR%26sp%3D3%26pq%3Dusing%2520sphinx%2520%26sk%3DHS1UT1%26sc%3D3-13%26cvid%3D5C7C670902F041679AAF81D1D4C8726E%26ajf%3D70">https://www.bing.com/videos/search?q=using+sphinx+for+documentation&amp;&amp;view=detail&amp;mid=4E8351B155222C9821484E8351B155222C982148&amp;&amp;FORM=VRDGAR&amp;ru=%2Fvideos%2Fsearch%3Fq%3Dusing%2520sphinx%2520for%2520documentation%26qs%3DUT%26form%3DQBVR%26sp%3D3%26pq%3Dusing%2520sphinx%2520%26sk%3DHS1UT1%26sc%3D3-13%26cvid%3D5C7C670902F041679AAF81D1D4C8726E%26ajf%3D70</a></p></li>
+</ul>
+</section>
+</section>
+<section id="jupiter-als-version-auf-github-bringen-und-versionen-zuruck-holen">
+<h1>Jupiter als Version auf GitHub bringen und Versionen zurück holen<a class="headerlink" href="#jupiter-als-version-auf-github-bringen-und-versionen-zuruck-holen" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://thenewstack.io/integrate-jupyter-notebooks-with-github/">https://thenewstack.io/integrate-jupyter-notebooks-with-github/</a></p></li>
+<li><p><a class="reference external" href="https://stackoverflow.com/questions/48003022/jupyter-notebook-and-github">https://stackoverflow.com/questions/48003022/jupyter-notebook-and-github</a></p></li>
+</ul>
+</section>
+<section id="pelican">
+<h1>Pelican<a class="headerlink" href="#pelican" title="Permalink to this headline">¶</a></h1>
+<p><strong>Jupyter Pelican</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://github.com/chrisalbon/notes/blob/master/make.ipynb">https://github.com/chrisalbon/notes/blob/master/make.ipynb</a></p></li>
+<li><p><a class="reference external" href="https://github.com/chrisalbon/notes">https://github.com/chrisalbon/notes</a></p></li>
+<li><p><a class="reference external" href="https://github.com/danielfrg/pelican-jupyter">https://github.com/danielfrg/pelican-jupyter</a></p></li>
+<li><p><a class="reference external" href="https://pmbaumgartner.github.io/blog/jupyter-notebooks-for-pelican/">https://pmbaumgartner.github.io/blog/jupyter-notebooks-for-pelican/</a></p></li>
+<li><p><a class="reference external" href="https://github.com/chuckpr/pelican-jupyter-reader">https://github.com/chuckpr/pelican-jupyter-reader</a></p></li>
+<li><p><a class="reference external" href="https://github.com/chuckpr/pelican-jupyter-reader/tree/main/demo">https://github.com/chuckpr/pelican-jupyter-reader/tree/main/demo</a></p></li>
+<li><p><a class="reference external" href="https://opensourcelibs.com/lib/pelican-jupyter">https://opensourcelibs.com/lib/pelican-jupyter</a></p></li>
+<li><p><a class="reference external" href="https://openbase.com/python/pelican-jupyter/documentation">https://openbase.com/python/pelican-jupyter/documentation</a></p></li>
+<li><p><a class="reference external" href="https://github.com/AbdulSayyed/jupyter-pelican">https://github.com/AbdulSayyed/jupyter-pelican</a></p></li>
+<li><p><strong>https://janakiev.com/blog/pelican-jupyter/</strong></p></li>
+<li><p><a class="reference external" href="http://www.legendu.net/misc/blog/use-jupyterlab-notebooks-in-pelican">http://www.legendu.net/misc/blog/use-jupyterlab-notebooks-in-pelican</a></p></li>
+<li><p><strong>https://github.com/pelican-plugins</strong></p></li>
+</ul>
+<p><strong>Pelican themes</strong></p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.getpelican.com/en/stable/themes.html">https://docs.getpelican.com/en/stable/themes.html</a></p></li>
+<li><p><a class="reference external" href="https://github.com/dokelung/jojo/tree/4b834ae02807ec41556e18758143f41d0aa8f937">https://github.com/dokelung/jojo/tree/4b834ae02807ec41556e18758143f41d0aa8f937</a>
+gut erklärt, mit Bild im trailer</p></li>
+<li><p><a class="reference external" href="https://github.com/claudio-walser/pelican-fh5co-marble/tree/b1264366d1381c87e2940dde5a34383f10ce7c69">https://github.com/claudio-walser/pelican-fh5co-marble/tree/b1264366d1381c87e2940dde5a34383f10ce7c69</a></p></li>
+<li><p><a class="reference external" href="https://github.com/getpelican/pelican-themes/tree/master/pelican-striped-html5up">https://github.com/getpelican/pelican-themes/tree/master/pelican-striped-html5up</a></p></li>
+<li><p><a class="reference external" href="https://github.com/nairobilug/pelican-alchemy">https://github.com/nairobilug/pelican-alchemy</a></p></li>
+<li><p><a class="reference external" href="https://github.com/arulrajnet/attila">https://github.com/arulrajnet/attila</a> enthält viel</p></li>
+</ul>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">scipy.interpolate</span> <span class="kn">import</span> <span class="n">splprep</span><span class="p">,</span> <span class="n">splev</span>
+
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">from</span> <span class="nn">matplotlib.path</span> <span class="kn">import</span> <span class="n">Path</span>
+<span class="kn">from</span> <span class="nn">matplotlib.patches</span> <span class="kn">import</span> <span class="n">PathPatch</span>
+
+<span class="n">N</span> <span class="o">=</span> <span class="mi">400</span>
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>
+<span class="n">r</span> <span class="o">=</span> <span class="mf">0.5</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+<span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">t</span><span class="p">),</span> <span class="n">r</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">t</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">fig, ax = plt.subplots()</span>
+<span class="sd">ax.plot(x, y)</span>
+<span class="sd">plt.show()</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<pre class="literal-block">'nfig, ax = plt.subplots()nax.plot(x, y)nplt.show()n'</pre>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Error amplitudes depending on the curve parameter *t*</span>
+<span class="c1"># (actual values are arbitrary and only for illustrative purposes):</span>
+<span class="n">err</span> <span class="o">=</span> <span class="mf">0.05</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">t</span><span class="p">)</span> <span class="o">**</span> <span class="mi">2</span> <span class="o">+</span> <span class="mf">0.04</span> <span class="o">+</span> <span class="mf">0.02</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="mi">9</span> <span class="o">*</span> <span class="n">t</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># calculate normals via derivatives of splines</span>
+<span class="n">tck</span><span class="p">,</span> <span class="n">u</span> <span class="o">=</span> <span class="n">splprep</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">],</span> <span class="n">s</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">dx</span><span class="p">,</span> <span class="n">dy</span> <span class="o">=</span> <span class="n">splev</span><span class="p">(</span><span class="n">u</span><span class="p">,</span> <span class="n">tck</span><span class="p">,</span> <span class="n">der</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">l</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">hypot</span><span class="p">(</span><span class="n">dx</span><span class="p">,</span> <span class="n">dy</span><span class="p">)</span>
+<span class="n">nx</span> <span class="o">=</span> <span class="n">dy</span> <span class="o">/</span> <span class="n">l</span>
+<span class="n">ny</span> <span class="o">=</span> <span class="o">-</span><span class="n">dx</span> <span class="o">/</span> <span class="n">l</span>
+
+<span class="c1"># end points of errors</span>
+<span class="n">xp</span> <span class="o">=</span> <span class="n">x</span> <span class="o">+</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">err</span>
+<span class="n">yp</span> <span class="o">=</span> <span class="n">y</span> <span class="o">+</span> <span class="n">ny</span> <span class="o">*</span> <span class="n">err</span>
+<span class="n">xn</span> <span class="o">=</span> <span class="n">x</span> <span class="o">-</span> <span class="n">nx</span> <span class="o">*</span> <span class="n">err</span>
+<span class="n">yn</span> <span class="o">=</span> <span class="n">y</span> <span class="o">-</span> <span class="n">ny</span> <span class="o">*</span> <span class="n">err</span>
+
+<span class="n">vertices</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">block</span><span class="p">([[</span><span class="n">xp</span><span class="p">,</span> <span class="n">xn</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]],</span>
+                     <span class="p">[</span><span class="n">yp</span><span class="p">,</span> <span class="n">yn</span><span class="p">[::</span><span class="o">-</span><span class="mi">1</span><span class="p">]]])</span><span class="o">.</span><span class="n">T</span>
+<span class="n">codes</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">LINETO</span> <span class="o">*</span> <span class="n">np</span><span class="o">.</span><span class="n">ones</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">vertices</span><span class="p">),</span> <span class="n">dtype</span><span class="o">=</span><span class="n">Path</span><span class="o">.</span><span class="n">code_type</span><span class="p">)</span>
+<span class="n">codes</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">=</span> <span class="n">codes</span><span class="p">[</span><span class="nb">len</span><span class="p">(</span><span class="n">xp</span><span class="p">)]</span> <span class="o">=</span> <span class="n">Path</span><span class="o">.</span><span class="n">MOVETO</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">Path</span><span class="p">(</span><span class="n">vertices</span><span class="p">,</span> <span class="n">codes</span><span class="p">)</span>
+
+<span class="n">patch</span> <span class="o">=</span> <span class="n">PathPatch</span><span class="p">(</span><span class="n">path</span><span class="p">,</span> <span class="n">facecolor</span><span class="o">=</span><span class="s1">&#39;C0&#39;</span><span class="p">,</span> <span class="n">edgecolor</span><span class="o">=</span><span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+
+<span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">fig, ax = plt.subplots()</span>
+<span class="sd">ax.plot(x, y)</span>
+<span class="sd">ax.add_patch(patch)</span>
+<span class="sd">plt.show()</span>
+<span class="sd">&quot;&quot;&quot;</span>
+</pre></div>
+</div>
+<pre class="literal-block">'nfig, ax = plt.subplots()nax.plot(x, y)nax.add_patch(patch)nplt.show()n'</pre>
+</section>
+<section id="jinja-python-template-engine">
+<h1>Jinja - python template engine<a class="headerlink" href="#jinja-python-template-engine" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><a class="reference external" href="https://jinja.palletsprojects.com/en/3.0.x/">https://jinja.palletsprojects.com/en/3.0.x/</a></p></li>
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=-Q1LZQygStw">https://www.youtube.com/watch?v=-Q1LZQygStw</a></p></li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="https://chrisalbon.com/code/deep_learning/pytorch/basics/check_if_pytorch_is_using_gpu/">https://chrisalbon.com/code/deep_learning/pytorch/basics/check_if_pytorch_is_using_gpu/</a></p></li>
+<li><p><a class="reference external" href="https://www.amazon.com/Clean-Code-Python-maintainable-efficient/dp/1800560214?dchild=1&amp;keywords=clean+code+in+python&amp;qid=1613774923&amp;sr=8-3&amp;linkCode=sl1&amp;tag=chrisalbon-20&amp;linkId=6486b848f1198e477c80777c9616088b&amp;language=en_US&amp;ref_=as_li_ss_tl">https://www.amazon.com/Clean-Code-Python-maintainable-efficient/dp/1800560214?dchild=1&amp;keywords=clean+code+in+python&amp;qid=1613774923&amp;sr=8-3&amp;linkCode=sl1&amp;tag=chrisalbon-20&amp;linkId=6486b848f1198e477c80777c9616088b&amp;language=en_US&amp;ref_=as_li_ss_tl</a></p></li>
+<li><p><a class="reference external" href="https://pypi.org/project/markovify/">https://pypi.org/project/markovify/</a></p></li>
+<li><p><a class="reference external" href="https://github.com/chrisalbon/sklearn-flask-docker">https://github.com/chrisalbon/sklearn-flask-docker</a></p></li>
+<li><p><a class="reference external" href="https://pmbaumgartner.github.io/blog/the-fastest-way-to-load-data-django-postgresql/">https://pmbaumgartner.github.io/blog/the-fastest-way-to-load-data-django-postgresql/</a></p></li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pmbaumgartner.github.io/blog/spacy-rule-based-matcher-workflow/">https://pmbaumgartner.github.io/blog/spacy-rule-based-matcher-workflow/</a></p></li>
+<li><p><a class="reference external" href="https://pmbaumgartner.github.io/blog/applied-nlp-lessons/">https://pmbaumgartner.github.io/blog/applied-nlp-lessons/</a></p></li>
+<li><p><a class="reference external" href="https://pmbaumgartner.github.io/blog/notes-on-nlp-projects/">https://pmbaumgartner.github.io/blog/notes-on-nlp-projects/</a></p></li>
+<li><p><a class="reference external" href="https://pmbaumgartner.github.io/blog/holy-nlp/">https://pmbaumgartner.github.io/blog/holy-nlp/</a></p></li>
+</ul>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.youtube.com/watch?v=W6JvboT8Uo8">https://www.youtube.com/watch?v=W6JvboT8Uo8</a></p></li>
+</ul>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">K_user</span> <span class="o">=</span> <span class="mi">10</span><span class="o">*</span><span class="mi">9</span><span class="o">*</span><span class="mi">12</span>
+<span class="n">K_space</span> <span class="o">=</span> <span class="mi">30</span><span class="o">*</span><span class="mf">0.5</span><span class="o">*</span><span class="mi">12</span>
+
+<span class="n">K</span> <span class="o">=</span> <span class="mf">1.07</span><span class="o">*</span><span class="p">(</span><span class="n">K_user</span> <span class="o">+</span> <span class="n">K_space</span><span class="p">)</span>
+<span class="n">K</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="mf">1348.2</span>
+</pre></div>
+</div>
+</section>
+
+
+          </div> 
+        </div>
+      </div>
+    <div class="footer">
+    <p>
+      &copy; Copyright 2021, PSC.
+      Created using <a href="http://www.sphinx-doc.org/">Sphinx</a> 4.0.2 <a href="https://github.com/mga-sphinx/sphinx_adc_theme">ADC Theme</a> .
+    (Revision )
+        </p>
+    </div>
+      <div class="clearer"></div>
+    </div>
+        <div id="breadcrumbs">
+                How to generate documentations
+        </div>
+        <script type="text/javascript" charset="utf-8" src="_static/js/toc.js"></script>
+  </body>
+</html>
